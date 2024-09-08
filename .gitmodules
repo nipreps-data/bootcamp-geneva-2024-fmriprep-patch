@@ -1,0 +1,5 @@
+[submodule "sourcedata/raw"]
+	path = sourcedata/raw
+	url = https://github.com/OpenNeuroDatasets/ds005454.git
+	datalad-id = 7d556bac-defc-4614-b9c1-4ab4b9681496
+	datalad-url = https://github.com/OpenNeuroDatasets/ds005454.git
