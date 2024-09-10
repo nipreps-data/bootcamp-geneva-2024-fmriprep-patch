@@ -1,0 +1,61 @@
+Node: fmriprep_24_1_wf.sub_17_wf.bold_task_rest_wf.bold_MNI6_wf.resample
+Working directory: /data/nipreps-data/bootcamp-2024/work/fmriprep_24_1_wf/sub_17_wf/bold_task_rest_wf/bold_MNI6_wf/resample
+
+Node inputs:
+
+cval = 0.0
+fieldmap = <undefined>
+in_file = <undefined>
+inverse = [False]
+jacobian = True
+mode = constant
+num_threads = 8
+order = 3
+output_data_type = float32
+pe_dir = <undefined>
+prefilter = True
+ref_file = <undefined>
+ro_time = <undefined>
+transforms = <undefined>
+
+Traceback (most recent call last):
+  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nipype/pipeline/plugins/multiproc.py", line 67, in run_node
+    result["result"] = node.run(updatehash=updatehash)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nipype/pipeline/engine/nodes.py", line 527, in run
+    result = self._run_interface(execute=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nipype/pipeline/engine/nodes.py", line 645, in _run_interface
+    return self._run_command(execute)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nipype/pipeline/engine/nodes.py", line 771, in _run_command
+    raise NodeExecutionError(msg)
+nipype.pipeline.engine.nodes.NodeExecutionError: Exception raised while executing Node resample.
+
+Traceback:
+	Traceback (most recent call last):
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nipype/interfaces/base/core.py", line 397, in run
+	    runtime = self._run_interface(runtime)
+	              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/fmriprep/interfaces/resampling.py", line 117, in _run_interface
+	    resampled.to_filename(out_path)
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nibabel/filebasedimages.py", line 307, in to_filename
+	    self.to_file_map(**kwargs)
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nibabel/nifti1.py", line 2217, in to_file_map
+	    super().to_file_map(file_map, dtype)
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nibabel/analyze.py", line 1051, in to_file_map
+	    arr_writer.to_fileobj(imgf)
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nibabel/arraywriters.py", line 525, in to_fileobj
+	    array_to_file(
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nibabel/volumeutils.py", line 605, in array_to_file
+	    return _write_data(data, fileobj, out_dtype, order, pre_clips=pre_clips)
+	           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nibabel/volumeutils.py", line 784, in _write_data
+	    fileobj.write(dslice.tobytes())
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/site-packages/nibabel/openers.py", line 232, in write
+	    return self.fobj.write(b)
+	           ^^^^^^^^^^^^^^^^^^
+	  File "/home/chris/mambaforge/envs/bootcamp/lib/python3.11/gzip.py", line 289, in write
+	    self.fileobj.write(self.compress.compress(data))
+	OSError: [Errno 28] No space left on device
+

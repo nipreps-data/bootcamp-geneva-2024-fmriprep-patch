@@ -1,0 +1,96 @@
+[environment]
+cpu_count = 20
+exec_env = "posix"
+free_mem = 59.3
+overcommit_policy = "heuristic"
+overcommit_limit = "50%"
+nipype_version = "1.8.6"
+templateflow_version = "24.2.0"
+version = "24.1.0rc1.dev1+g97b7cd8d"
+
+[execution]
+bids_dir = "/data/nipreps-data/bootcamp-2024/sourcedata/raw"
+bids_database_dir = "/data/nipreps-data/bootcamp-2024/work/20240908-132518_5d90d6bb-b765-4962-8fb5-78aedf8a342c/bids_db"
+bids_description_hash = "c1b8b2adda5f235b10068df3063889864d0f734af046fcd0645e175649a6e385"
+boilerplate_only = false
+sloppy = false
+debug = []
+fmriprep_dir = "/data/nipreps-data/bootcamp-2024"
+fs_license_file = "/home/chris/Documents/freesurfer_license.txt"
+fs_subjects_dir = "/data/nipreps-data/bootcamp-2024/sourcedata/freesurfer"
+layout = "BIDS Layout: ...a/bootcamp-2024/sourcedata/raw | Subjects: 5 | Sessions: 0 | Runs: 0"
+log_dir = "/data/nipreps-data/bootcamp-2024/logs"
+log_level = 15
+low_mem = false
+md_only_boilerplate = false
+notrack = false
+track_carbon = false
+country_code = "CAN"
+output_dir = "/data/nipreps-data/bootcamp-2024"
+me_output_echos = false
+aggr_ses_reports = 4
+output_layout = "bids"
+output_spaces = "MNI152NLin2009cAsym:res-native"
+reports_only = false
+run_uuid = "20240908-132518_5d90d6bb-b765-4962-8fb5-78aedf8a342c"
+participant_label = [ "11", "14", "15", "16", "17",]
+templateflow_home = "/home/chris/.cache/templateflow"
+work_dir = "/data/nipreps-data/bootcamp-2024/work"
+write_graph = false
+
+[workflow]
+anat_only = false
+bold2anat_dof = 6
+bold2anat_init = "t2w"
+cifti_output = "91k"
+fmap_bspline = false
+force_syn = false
+hires = true
+fs_no_resume = false
+ignore = []
+level = "full"
+longitudinal = false
+run_msmsulc = true
+medial_surface_nan = false
+project_goodvoxels = false
+regressors_all_comps = false
+regressors_dvars_th = 1.5
+regressors_fd_th = 0.5
+run_reconall = true
+skull_strip_fixed_seed = false
+skull_strip_template = "OASIS30ANTs"
+skull_strip_t1w = "force"
+slice_time_ref = 0.5
+spaces = "MNI152NLin2009cAsym:res-native MNI152NLin6Asym:res-2"
+use_syn_sdc = false
+me_t2s_fit_method = "curvefit"
+
+[nipype]
+crashfile_format = "txt"
+get_linked_libs = false
+nprocs = 20
+omp_nthreads = 8
+plugin = "MultiProc"
+remove_unnecessary_outputs = true
+resource_monitor = false
+stop_on_first_crash = false
+
+[seeds]
+master = 24955
+ants = 38116
+numpy = 3700
+
+[execution.derivatives]
+
+[execution.dataset_links]
+raw = "/data/nipreps-data/bootcamp-2024/sourcedata/raw"
+templateflow = "/home/chris/.cache/templateflow"
+
+[nipype.plugin_args]
+maxtasksperchild = 1
+raise_insufficient = false
+
+[execution.bids_filters.t1w]
+suffix = "T1w"
+datatype = "anat"
+acquisition = "denoised"
